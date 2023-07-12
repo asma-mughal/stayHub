@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-
+import styles from './style';
+import Dashboard from './components/Dashboard';
+import { Route, Router, Routes } from 'react-router-dom';
+import DestinationPage from './pages/Destinations/destination';
+import Success from './pages/Success/Success';
+import Modern from './pages/Modern/Modern';
+import SingleDest from './pages/singleDest/SingleDest';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Routes>
+    <Route path='/' element={<Dashboard />} />
+    <Route path='/dest' element={<DestinationPage />} />
+    <Route path='/success' element={<Success />} />
+    <Route path='/modern' element={<Modern />} />
+    <Route path='/single/:id' element={<SingleDest />} />
+  </Routes>
   );
 }
 
