@@ -4,6 +4,7 @@ import { layout } from '../../style'
 import { arrow } from '../../assets'
 import { modern } from '../../constants'
 import { Link } from 'react-router-dom'
+import CardModern from './CardModern'
 const Modern = () => {
   return (
     <section id="features" className={"my-5"}>
@@ -29,7 +30,7 @@ an array of top-notch amenities.</p>
     </div>
    
   </div>
-  <CardDest data={modern}
+  <CardModern data={modern}
   start={0}
   end={3}
   link={false}

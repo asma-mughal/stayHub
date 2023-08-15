@@ -247,7 +247,7 @@ export const galleryData = [
     icon : gallery5
   },
   {
-    id: "5",
+    id: "6",
     title: "Serene Haven Hotel",
     description : "Offers endless opportunities for adventure enthusiasts.",
     star : 4.9,
@@ -385,3 +385,7 @@ export const aminities = [
     icon: pakring
   }
 ]
+export const urlAPI = "https://portals.barefoot.com"
+export const userName =   'bsc20230607'
+export const password =  '#20230607vhgfbefe#375378'
+export const barefootAccount =  'v3cbsc0526'

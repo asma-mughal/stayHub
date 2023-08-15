@@ -1,13 +1,29 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from '../../style'
 import { arrow } from '../../assets'
 import CardDest from './CardDest'
 import { destinatons } from '../../constants'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, json, useNavigate } from 'react-router-dom'
+import { useMyContext } from '../../context/MyContext'
 const Destination = () => {
   const navigate = useNavigate()
+  const { fetchData,convertXmlToJson} = useMyContext()
+  const [error, setError] = useState()
+  const [jsonData, setJsonData] = useState({});
+  useEffect(() => {
+   fetchData((error, responseData) => {
+     if (error) {
+       setError('Error fetching data');
+     } else {
+      const res = convertXmlToJson(responseData['#text']?.value)
+      setJsonData(JSON.parse(res))
+     }
+   });
+
+   }, [])
   return (
     <>
+   
     <div className="flex flex-col md:flex-row font-poppins">
     <div className="md:w-1/2 p-4">
     <h1 className={`text-[24px] font-poppins font-bold text-heading leading-[30.8px]`}>Popular Destinations</h1>
@@ -33,7 +49,7 @@ const Destination = () => {
     </div>
    
   </div>
-  <CardDest data ={destinatons}
+  <CardDest data ={jsonData}
   start={0}
   end={3}
   link={true}

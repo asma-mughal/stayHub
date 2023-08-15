@@ -1,9 +1,24 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import CardDest from '../../components/Destinations/CardDest';
 import { destinatons } from '../../constants';
 import Footer from '../../components/Footer/Footer';
+import { useMyContext } from '../../context/MyContext';
 
 const SinglePage = () => {
+  const { fetchData,convertXmlToJson} = useMyContext()
+  const [jsonData, setJsonData] = useState({});
+  const [error, setError] = useState();
+  useEffect(() => {
+   fetchData((error, responseData) => {
+     if (error) {
+       setError('Error fetching data');
+     } else {
+      const res = convertXmlToJson(responseData['#text']?.value)
+      setJsonData(JSON.parse(res))
+     }
+   });
+
+   }, [])
   return (
     <>
      <div className="flex flex-col md:flex-row font-poppins">
@@ -32,12 +47,11 @@ const SinglePage = () => {
     text-justify font-poppins text-gray-500
     `}>From pristine beaches with crystal-clear waters to majestic mountains with panoramic views, breathtaking beauty at every turn.</p>  
     </div>
-  <CardDest data ={destinatons}
-   start={0}
-   end={6}
-   link={true}
+    <CardDest data ={jsonData}
+  start={0}
+  end={3}
+  link={true}
   />
-
     </>
 
   )
