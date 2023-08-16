@@ -18,7 +18,7 @@ bg-blend-overlay bg-fixed transition-opacity duration-500
 
 hover:bg-opacity-50`}
  style={{
-  backgroundImage: `url(${name})` ,
+  backgroundImage: `url(${name})` 
 }}>
         <Navbar background={false} />
     

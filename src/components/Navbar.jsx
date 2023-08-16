@@ -31,7 +31,7 @@ const navigate = useNavigate();
     items-center navbar ${
       navbarFixed ? " bg-black" : ""
     } `}>
-      <img src={logo} alt="companyLogo" className="w-[140px] h-[36px]" />
+      <img src={logo} alt="hoobank" className="w-[140px] h-[36px]" />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">
         {navLinks.map((nav, index) => (

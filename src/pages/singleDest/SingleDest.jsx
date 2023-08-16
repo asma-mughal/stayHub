@@ -1,25 +1,11 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import Hero from '../../components/Hero';
 import Footer from '../../components/Footer/Footer';
 import Contact from '../../components/Contact';
 import styles from '../../style';
 import Navbar from '../../components/Navbar';
 import DestPage from './DestPage';
-import { useMyContext } from '../../context/MyContext';
 const SingleDest = () => {
-  const { fetchOneProperty,convertXmlToJson} = useMyContext()
-  const [error, setError] = useState()
-  const [oneProperty, setOneProperty] = useState({});
-  useEffect(() => {
-    fetchOneProperty()
-      .then(data => {
-        console.log(data?.Root?.Properties?.ProperTy)
-        setOneProperty(data?.Root?.Properties?.ProperTy)
-      })
-      .catch(error => {
-        console.error('Error fetching property data:', error);
-      });
-  }, []);
   return (
     <div className="w-full overflow-hidden">
     
@@ -33,9 +19,7 @@ const SingleDest = () => {
     </div>
     <div className={`bg-primary ${styles.paddingX} ${styles.marginY}  ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
-       <DestPage
-       oneProperty={oneProperty}
-       />
+        <DestPage />
         <Contact />
         </div>
         </div>

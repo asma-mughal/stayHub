@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import Navbar from './Navbar'
 import Hero from './Hero';
 import styles from '../style';
@@ -7,11 +7,7 @@ import Modern from './Modern/Modern';
 import MemStay from './Memorable/MemStay';
 import Gallery from './Gallery/Gallery';
 import Footer from './Footer/Footer';
-import xmlJs from 'xml-js';
-const MainHome = () => {
-  
-  const [error, setError] = useState(null);
- 
+const Dashboard = () => {
   return (
     <div className=" w-full overflow-hidden">
     
@@ -38,4 +34,4 @@ const MainHome = () => {
   )
 }
 
-export default MainHome;
+export default Dashboard

@@ -40,11 +40,10 @@ import internet from './internet.png';
 import pool from './swimming-man.png';
 import pakring from './parking-sign.png';
 import iron from './iron.png';
-import blackLogo from './logo3.png';
 export {
   logo, close,menu, hero, tag1, tag2, tag3, cardImage, arrow, location,
   bathroom, guest, home, bedroom, scene, scene2, food, comfort, desert,
   sliderFood, aminties, gift,star1,food2, food3, comfort2, comfort3, desert2 , desert3,
   gallery1, gallery2, gallery3, gallery4, gallery5, newsLetter, mainDest, air, bath,
-   internet, pakring, pool, iron, blackLogo
+   internet, pakring, pool, iron
 };
